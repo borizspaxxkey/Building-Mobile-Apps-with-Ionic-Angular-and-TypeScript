@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, TabHighlight } from 'ionic-angular';
+import { MyTeamsPage } from '../my-teams/my-teams';
 
 @Component({
   selector: 'page-team-detail',
@@ -13,4 +14,9 @@ export class TeamDetailPage {
     console.log('*nav params', this.navParams);
   }
 
+
+  goHome() {
+    //this.navCtrl.push(MyTeamsPage);
+    this.navCtrl.parent.parent.popToRoot();
+  }
 }

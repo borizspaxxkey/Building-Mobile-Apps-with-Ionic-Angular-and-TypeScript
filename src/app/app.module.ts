@@ -21,7 +21,9 @@ import { TeamHomePage } from '../pages/team-home/team-home';
     GamePage,
     TeamDetailPage,
     TeamsPage,
-    TournamentsPage
+    TournamentsPage,
+    StandingsPage,
+    TeamHomePage
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,8 @@ import { TeamHomePage } from '../pages/team-home/team-home';
     TeamDetailPage,
     TeamsPage,
     TournamentsPage,
+    StandingsPage,
+    TeamHomePage,
     StandingsPage,
     TeamHomePage
   ],
