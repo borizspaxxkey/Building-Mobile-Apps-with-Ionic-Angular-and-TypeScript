@@ -9,4 +9,12 @@ export class EliteApi {
   constructor(public http: HttpClient) {
   }
 
+  getTournaments() {
+    return new Promise(resolve => {
+      this.http.get(`${this.baseUrl}/tournaments.json`).subscribe(res => {
+        console.log(res);
+        resolve(res);
+      });
+    });
+  }
 }

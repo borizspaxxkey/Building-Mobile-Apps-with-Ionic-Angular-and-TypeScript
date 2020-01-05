@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, TabHighlight } from 'ionic-angular';
 import { MyTeamsPage } from '../my-teams/my-teams';
+import { EliteApi } from '../../providers/elite-api/elite-api';
 
 @Component({
   selector: 'page-team-detail',
