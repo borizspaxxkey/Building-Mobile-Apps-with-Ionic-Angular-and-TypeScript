@@ -28,4 +28,7 @@ export class MapPage {
     }
   }
 
+  goToDirections() {
+    (<any>window).location = `geo:${this.map.lat}, ${this.map.lng};u=35`;
+  }
 }

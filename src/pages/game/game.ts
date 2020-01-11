@@ -28,7 +28,10 @@ export class GamePage {
     this.navCtrl.push(TeamHomePage, team);
   }
 
-  goToDirections() {
+  goToDirections(teamId) {
+    let tourneyData = this.eliteApi.getCurrentTourney();
+    let location = tourneyData.locations[this.game.locationId];
+    (<any>window).location = `geo:${location.latitude}, ${location.longitude};u=35`;
   }
 
   goToMap() {

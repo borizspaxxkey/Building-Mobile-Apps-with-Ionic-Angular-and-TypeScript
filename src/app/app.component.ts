@@ -38,6 +38,8 @@ export class MyApp {
       this.splashScreen.hide();
       this.refreshFavorites();
       this.events.subscribe('favorites:changed', () => this.refreshFavorites());
+      this.userSettings.initStorage()
+        .then(() => this.rootPage = MyTeamsPage);
     });
   }
 
@@ -56,7 +58,8 @@ export class MyApp {
   }
 
   refreshFavorites() {
-    this.favoriteTeams = this.userSettings.getAllFavorites();
+    this.userSettings.getAllFavorites()
+      .then(favs => this.favoriteTeams = favs);
   }
 
   goToTeam(favorite) {

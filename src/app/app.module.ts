@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { AgmCoreModule } from "@agm/core";
+import { SQLite } from "@ionic-native/sqlite/ngx";
 
 // Components
 import { MyApp } from './app.component';
@@ -26,6 +27,7 @@ import { GamePage } from '../pages/game/game';
 import { EliteApi } from '../providers/elite-api/elite-api';
 import { UserSettings } from '../providers/user-settings/user-settings';
 import { MapPage } from '../pages/map/map';
+import { SqlStorage } from '../providers/sql-storage/sql-storage';
 
 @NgModule({
   declarations: [
@@ -62,10 +64,12 @@ import { MapPage } from '../pages/map/map';
   ],
   providers: [
     StatusBar,
+    SQLite,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     EliteApi,
-    UserSettings
+    UserSettings,
+    SqlStorage
   ]
 })
 export class AppModule { }
