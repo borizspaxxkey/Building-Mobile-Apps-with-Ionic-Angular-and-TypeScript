@@ -8,6 +8,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
+import { AgmCoreModule } from "@agm/core";
 
 // Components
 import { MyApp } from './app.component';
@@ -24,6 +25,7 @@ import { GamePage } from '../pages/game/game';
 // Services
 import { EliteApi } from '../providers/elite-api/elite-api';
 import { UserSettings } from '../providers/user-settings/user-settings';
+import { MapPage } from '../pages/map/map';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,15 @@ import { UserSettings } from '../providers/user-settings/user-settings';
     TeamsPage,
     TournamentsPage,
     StandingsPage,
-    TeamHomePage
+    TeamHomePage,
+    MapPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyCCmTtsSJgDAOy7yY7AkrE3YZ4CHLzACa8' })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,6 +57,7 @@ import { UserSettings } from '../providers/user-settings/user-settings';
     StandingsPage,
     TeamHomePage,
     StandingsPage,
+    MapPage,
     TeamHomePage
   ],
   providers: [
